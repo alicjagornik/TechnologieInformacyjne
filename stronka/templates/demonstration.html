@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demonstracja zagadnienia</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <h1>Demonstracja zagadnienia</h1>
+    <h2>Obliczanie pochodnej zadanej funkcji w podanym punkcie</h2>
+    <p>wyjaśnienie jak konkretnie wpisywać te dane żeby działało</p>
+    <h2>Dane:</h2>
+
+    <form action="{{ url_for('demonstration') }}" method="POST">
+        <label for="function">Funkcja:</label>
+        <input type="text" name="function" id="function" required>
+        <br>
+        <label for="point">Punkt (współrzędna x):</label>
+        <input type="number" name="point" id="point" required>
+        <br>
+        <button type="submit">Oblicz</button>
+    </form>
+
+    {% if derivative %}
+        <h2>Wynik:</h2>
+        <p>Obliczona pochodna w podanym punkcie: {{ derivative }}</p>
+    {% endif %}
+
+    {% if der %}
+    <p>Obliczona pochodna w podanym punkcie: {{ der }}</p>
+    {% endif %}
+
+
+    <div class="container">
+        <div class="button">
+            <h3>
+                <a href="/">Strona główna</a>
+            </h3>
+        </div>
+    </div>
+</body>
+</html>
